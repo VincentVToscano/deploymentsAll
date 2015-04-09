@@ -137,7 +137,7 @@
 			font-size: 150%;
 			color: black;
 			background: white;
-			margin:0 0 10px 0;
+			margin:10px 0 5px 0;
 		}
 		h2{
 			font-size: 125%;
