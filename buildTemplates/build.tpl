@@ -8,7 +8,7 @@
 	<meta name="keywords" content="Vincent V. Toscano">
 	<meta name="author" content="Vincent V. Toscano">
 	<meta name="copyright" content="&copy;2015 Vincent V. Toscano">
-	<title>Build Status</title>
+	<title>CI_BUILD_NUMBER</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<style>
 		html, body, div, span, applet, object, iframe,
@@ -120,20 +120,36 @@
 		}
 
 		.fontIssued{
-			position: absolute;width: 100%;
+			position: absolute;
 			color: white;
 			font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 			font-size: 100%;
+		}
+		html, body {
+			height: 100%;
+			width: 100%;
+			overflow-x: hidden;
+		}
+		body{
+			margin: 1% 1% 0 1%;
 		}
 		h1{
 			font-size: 150%;
 			color: black;
 			background: white;
+			margin:0 0 10px 0;
+		}
+		h2{
+			font-size: 125%;
+			color: black;
+			background: lightcoral;
+		}
+		h1, h2, h3, h4, h5, h6,pre {
+			width: 98%;
 		}
 	</style>
 </head>
 <body class="fontIssued">
-
 	<h1>Commit</h1>
 
 	<h2>Commit Hash:</h2>
