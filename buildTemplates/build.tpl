@@ -161,6 +161,7 @@
 			color: black;
 			background: white;
 			margin-bottom: 5px;
+			padding: 0 0 0 5px;
 		}
 
 
@@ -173,6 +174,7 @@
 			font-size: 125%;
 			color: black;
 			background: lightcoral;
+			padding: 0 0 0 5px;
 		}
 
 
