@@ -8,7 +8,7 @@
 	<meta name="keywords" content="Vincent V. Toscano">
 	<meta name="author" content="Vincent V. Toscano">
 	<meta name="copyright" content="&copy;2015 Vincent V. Toscano">
-	<meta http-equiv="refresh" content="302">
+	<meta http-equiv="refresh" content="15">
 	<title>CI_BUILD_NUMBER</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<style>
