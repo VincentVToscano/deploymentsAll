@@ -17,7 +17,7 @@ BUILD_PAGE=~/clone/HTML_5_build/build.html
 BUILD_PAGE2=~/clone/XHTML_1_Transitional_build/build.html
 
 # Create build and Git deploy directories
-mkdir -p ~/clone/{HTML_5_build,XHTML_1_Transitional_build}
+mkdir -p $HOME/clone/{HTML_5_build,XHTML_1_Transitional_build}
 
 # Copy template all build directories
 echo ~/clone/HTML_5_build/build.html ~/clone/XHTML_1_Transitional_build/build.html | xargs -n 1 cp ~/clone/deploymentsAll/buildTemplates/build.tpl
