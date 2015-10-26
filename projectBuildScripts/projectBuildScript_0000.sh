@@ -8,19 +8,19 @@
 # Run build
 # sh ~/clone/deploymentsAll/projectBuildScripts/projectBuildScript_0000.sh
 
-# Point to src environments
-HTML_5_SRC=~/clone/HTML_5_src
-XHTML_1_SRC=~/clone/XHTML_1_Transitional_src
-
-# Create reference to build.html
-BUILD_PAGE=~/clone/HTML_5_build/build.html
-BUILD_PAGE2=~/clone/XHTML_1_Transitional_build/build.html
-
 # Create build and Git deploy directories
 mkdir -p $HOME/clone/{HTML_5_build,XHTML_1_Transitional_build}
 
 # Copy template all build directories
-echo ~/clone/HTML_5_build/build.html ~/clone/XHTML_1_Transitional_build/build.html | xargs -n 1 cp ~/clone/deploymentsAll/buildTemplates/build.tpl
+echo $HOME/clone/HTML_5_build/build.html $HOME/clone/XHTML_1_Transitional_build/build.html | xargs -n 1 cp $HOME/clone/deploymentsAll/buildTemplates/build.tpl
+
+# Point to src environments
+HTML_5_SRC=$HOME/clone/HTML_5_src
+XHTML_1_SRC=$HOME/clone/XHTML_1_Transitional_src
+
+# Create reference to build.html
+BUILD_PAGE=$HOME/clone/HTML_5_build/build.html
+BUILD_PAGE2=$HOME/clone/XHTML_1_Transitional_build/build.html
 
 # Install lock version Node.js and latest NPM
 nvm install v0.12.2
