@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us" id="vvt" style="background: black">
+<html lang="en-us" id="VVT" style="background: black">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -7,8 +7,8 @@
 	<meta name="description" content="Vincent V. Toscano website.">
 	<meta name="keywords" content="Vincent V. Toscano">
 	<meta name="author" content="Vincent V. Toscano">
-	<meta name="copyright" content="&copy;2015 Vincent V. Toscano">
-	<meta http-equiv="refresh" content="15">
+	<meta name="copyright" content="&copy;CURRENT_YEAR Vincent V. Toscano">
+	{*<meta http-equiv="refresh" content="15">*}
 	<title>CI_BUILD_NUMBER</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<style>
