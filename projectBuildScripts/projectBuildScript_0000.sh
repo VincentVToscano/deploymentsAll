@@ -45,8 +45,8 @@ case "$CI_BRANCH" in
 	# Build HTML_5_build
 		cd $HTML_5_SRC
 		npm cache clean && npm install
-		echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;XHTML_1_Transitional_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE}
-		sh createPages.sh 2>&1 >> ${BUILD_PAGE}
+		echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;HTML_5_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE}
+		sh buildPages.sh 2>&1 >> ${BUILD_PAGE}
 		echo '</pre>' >> ${BUILD_PAGE}
 		echo '<h1>Files and Directories</h1><pre class="sm">' >> ${BUILD_PAGE}
 		(find * 2>&1) >> ${BUILD_PAGE}
