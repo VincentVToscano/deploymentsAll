@@ -37,7 +37,7 @@ echo $BUILD_PAGE $BUILD_PAGE2 | xargs -n 1 sed -i -e "s:CURRENT_YEAR:$YEAR:"
 # Install lock version Node.js and latest NPM
 nvm install v4.2.2
 nvm use v4.2.2
-npm install -g npm@latest
+#npm install -g npm@latest
 
 case "$CI_BRANCH" in
 	dev)
