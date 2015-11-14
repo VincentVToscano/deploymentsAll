@@ -85,6 +85,7 @@ case "$CI_BRANCH" in
 
 	stage)
 	# Build HTML_5_build
+		echo "STAGING BUILD STARTED"
 		cd $HTML_5_SRC
 		npm cache clean && npm install
 		echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;HTML_5_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE}
