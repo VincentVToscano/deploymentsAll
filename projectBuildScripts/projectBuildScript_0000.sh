@@ -83,7 +83,7 @@ case "$CI_BRANCH" in
 
 	;;
 
-	stage)
+	stage | master)
 	# Build HTML_5_build
 		echo "STAGING BUILD STARTED"
 		cd $HTML_5_SRC
