@@ -126,9 +126,10 @@ case "$CI_BRANCH" in
 		sed -i "s:LLL: :g" ${BUILD_PAGE2}
 
 		# Change forwarding in .htaccess
-		sed -i "s:dev.t:stage.t:g" "$HTML_5_BUILD"/.htaccess
-		sed -i "s:dev.t:stage.t:g" "$XHTML_1_BUILD"/.htaccess
-
+		#sed -i "s:dev.t:stage.t:g" "$HTML_5_BUILD"/.htaccess
+		#sed -i "s:dev.t:stage.t:g" "$XHTML_1_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.toolofnadrive.com:stage.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.toolofnadrive.com:stage.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
 	;;
 
 	special)
