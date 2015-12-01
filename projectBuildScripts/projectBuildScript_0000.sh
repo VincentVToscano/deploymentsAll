@@ -109,7 +109,7 @@ case "$CI_BRANCH" in
 		cd $XHTML_1_SRC
 		npm cache clean && npm install
 		echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;XHTML_1_Transitional_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE2}
-		sh buildPages.sh 2>&1 >> ${BUILD_PAGE2}
+		sh buildPages.sh stage 2>&1 >> ${BUILD_PAGE2}
 		echo '</pre>' >> ${BUILD_PAGE2}
 		echo '<h1>Src Files and Directories</h1><pre class="sm">' >> ${BUILD_PAGE2}
 		(find * 2>&1) >> ${BUILD_PAGE2}
