@@ -133,7 +133,7 @@ case "$CI_BRANCH" in
 	;;
 	master)
 	# Build HTML_5_build
-		echo "STAGING BUILD STARTED"
+		echo "PRODUCTION BUILD STARTED"
 		cd $HTML_5_SRC
 		npm cache clean && npm install
 		echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;HTML_5_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE}
@@ -179,11 +179,7 @@ case "$CI_BRANCH" in
 		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
 		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
 	;;
-
-	special)
-		echo -n "fallthrough"
-		;&
 	fallthrough)
 		echo "default"
-		;;
+	;;
 esac
