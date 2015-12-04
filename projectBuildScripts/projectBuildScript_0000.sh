@@ -83,7 +83,7 @@ case "$CI_BRANCH" in
 
 	;;
 
-	stage | master)
+	stage)
 	# Build HTML_5_build
 		echo "STAGING BUILD STARTED"
 		cd $HTML_5_SRC
@@ -130,6 +130,54 @@ case "$CI_BRANCH" in
 		#sed -i "s:dev.t:stage.t:g" "$XHTML_1_BUILD"/.htaccess
 		sed -i "s:dunbar-dev.toolofnadrive.com:stage.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
 		sed -i "s:dunbar-dev.toolofnadrive.com:stage.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
+	;;
+	master)
+	# Build HTML_5_build
+		echo "STAGING BUILD STARTED"
+		cd $HTML_5_SRC
+		npm cache clean && npm install
+		echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;HTML_5_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE}
+		sh buildPages.sh prod 2>&1 >> ${BUILD_PAGE}
+		echo '</pre>' >> ${BUILD_PAGE}
+		echo '<h1>Files and Directories</h1><pre class="sm">' >> ${BUILD_PAGE}
+		(find * 2>&1) >> ${BUILD_PAGE}
+		echo '</pre>' >> ${BUILD_PAGE}
+		cd $HTML_5_BUILD
+		echo '<h1>Build and Directories</h1><pre class="sm">' >> ${BUILD_PAGE}
+		(find * 2>&1) >> ${BUILD_PAGE}
+		echo '</pre></body></html>' >> $BUILD_PAGE
+		sed -i -e "s:CI_BUILD_NUMBER:$CI_BUILD_NUMBER:" -e "s:CI_COMMIT_ID:$CI_COMMIT_ID:" -e "s:CI_BRANCH:$CI_BRANCH:" -e "s:CI_COMMITTER_NAME:$CI_COMMITTER_NAME:" ${BUILD_PAGE}
+		echo $CI_MESSAGE
+		CI_MESSAGE=$(echo $CI_MESSAGE | sed 's/ /LLL/g')
+		echo $CI_MESSAGE
+		sed -i "s:CI_MESSAGE:$CI_MESSAGE:" ${BUILD_PAGE} || sed -i "s:CI_MESSAGE:Merge:" ${BUILD_PAGE}
+		sed -i "s:LLL: :g" ${BUILD_PAGE}
+
+		# Build XHTML_1_Transitional_build
+		cd $XHTML_1_SRC
+		npm cache clean && npm install
+		echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;XHTML_1_Transitional_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE2}
+		sh buildPages.sh prod 2>&1 >> ${BUILD_PAGE2}
+		echo '</pre>' >> ${BUILD_PAGE2}
+		echo '<h1>Src Files and Directories</h1><pre class="sm">' >> ${BUILD_PAGE2}
+		(find * 2>&1) >> ${BUILD_PAGE2}
+		echo '</pre>' >> ${BUILD_PAGE2}
+		cd $XHTML_1_BUILD
+		echo '<h1>Build and Directories</h1><pre class="sm">' >> ${BUILD_PAGE2}
+		(find * 2>&1) >> ${BUILD_PAGE2}
+		echo '</pre></body></html>' >> $BUILD_PAGE2
+		sed -i -e "s:CI_BUILD_NUMBER:$CI_BUILD_NUMBER:" -e "s:CI_COMMIT_ID:$CI_COMMIT_ID:" -e "s:CI_BRANCH:$CI_BRANCH:" -e "s:CI_COMMITTER_NAME:$CI_COMMITTER_NAME:" ${BUILD_PAGE2}
+		echo $CI_MESSAGE
+		CI_MESSAGE=$(echo $CI_MESSAGE | sed 's/ /LLL/g')
+		echo $CI_MESSAGE
+		sed -i "s:CI_MESSAGE:$CI_MESSAGE:" ${BUILD_PAGE2} || sed -i "s:CI_MESSAGE:Merge:" ${BUILD_PAGE2}
+		sed -i "s:LLL: :g" ${BUILD_PAGE2}
+
+		# Change forwarding in .htaccess
+		#sed -i "s:dev.t:stage.t:g" "$HTML_5_BUILD"/.htaccess
+		#sed -i "s:dev.t:stage.t:g" "$XHTML_1_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
 	;;
 
 	special)
