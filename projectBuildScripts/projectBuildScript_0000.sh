@@ -20,7 +20,7 @@ echo $HOME/clone/HTML_5_build/build.html $HOME/clone/XHTML_1_Transitional_build/
 HTML_5_SRC=~/clone/HTML_5_src
 XHTML_1_SRC=~/clone/XHTML_1_Transitional_src
 
-# Point to src environments
+# Point to build environments
 HTML_5_BUILD=~/clone/HTML_5_build
 XHTML_1_BUILD=~/clone/XHTML_1_Transitional_build
 
@@ -34,10 +34,9 @@ echo $BUILD_PAGE $BUILD_PAGE2 | xargs -n 1 sed -i -e "s:CURRENT_YEAR:$YEAR:"
 # Source NVM
 . ~/.nvm/nvm.sh
 
-# Install lock version Node.js and latest NPM
+# Install lock version Node.js and NPM (do not install NPM 3)
 nvm install v4.2.2
 nvm use v4.2.2
-#npm install -g npm@latest
 
 case "$CI_BRANCH" in
 	dev)
@@ -126,10 +125,8 @@ case "$CI_BRANCH" in
 		sed -i "s:LLL: :g" ${BUILD_PAGE2}
 
 		# Change forwarding in .htaccess
-		#sed -i "s:dev.t:stage.t:g" "$HTML_5_BUILD"/.htaccess
-		#sed -i "s:dev.t:stage.t:g" "$XHTML_1_BUILD"/.htaccess
-		sed -i "s:dunbar-dev.toolofnadrive.com:stage.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
-		sed -i "s:dunbar-dev.toolofnadrive.com:stage.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.toolofnadrive.com:dunbar-stage.toolofnadrive.com:g" "$HTML_5_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.toolofnadrive.com:dunbar-stage.toolofnadrive.com:g" "$XHTML_1_BUILD"/.htaccess
 	;;
 	master)
 	# Build HTML_5_build
@@ -174,8 +171,6 @@ case "$CI_BRANCH" in
 		sed -i "s:LLL: :g" ${BUILD_PAGE2}
 
 		# Change forwarding in .htaccess
-		#sed -i "s:dev.t:stage.t:g" "$HTML_5_BUILD"/.htaccess
-		#sed -i "s:dev.t:stage.t:g" "$XHTML_1_BUILD"/.htaccess
 		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
 		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
 	;;
