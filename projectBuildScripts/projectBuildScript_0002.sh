@@ -16,7 +16,7 @@ mkdir -p ~/clone/www
 echo $HOME/clone/www/build.html | xargs -n 1 cp $HOME/clone/deploymentsAll/buildTemplates/build.tpl
 
 # Point to src environments
-HTML_5_SRC=~/clone/src
+HTML_5_SRC=~/clone
 
 # Point to src environments
 HTML_5_BUILD=~/clone/www
@@ -33,7 +33,7 @@ echo $BUILD_PAGE | xargs -n 1 sed -i -e "s:CURRENT_YEAR:$YEAR:"
 # Install lock version Node.js and latest NPM
 nvm install v4.2.4
 nvm use v4.2.4
-npm install -g npm@latest
+#npm install -g npm@latest
 
 case "$CI_BRANCH" in
     dev | stage)
