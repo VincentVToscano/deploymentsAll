@@ -36,13 +36,12 @@ nvm use v4.2.4
 #npm install -g npm@latest
 
 case "$CI_BRANCH" in
-    dev | stage)
-
+    dev)
     # Build HTML_5_build
         cd $HTML_5_SRC
         npm cache clean && npm install
         echo "<div>&#x2592;&#x2592;&#x2592;&nbsp;&nbsp;&nbsp;&nbsp;HTML_5_build&nbsp;&nbsp;&nbsp;&nbsp;&#x2592;&#x2592;&#x2592;</div><h1>Gulp Build</h1><pre>" >> ${BUILD_PAGE}
-        gulp 2>&1 >> ${BUILD_PAGE}
+        gulp >> ${BUILD_PAGE}
         echo '</pre>' >> ${BUILD_PAGE}
         echo '<h1>Files and Directories</h1><pre class="sm">' >> ${BUILD_PAGE}
         (find * 2>&1) >> ${BUILD_PAGE}
@@ -58,7 +57,6 @@ case "$CI_BRANCH" in
         sed -i "s:CI_MESSAGE:$CI_MESSAGE:" ${BUILD_PAGE} || sed -i "s:CI_MESSAGE:Merge:" ${BUILD_PAGE}
         sed -i "s:LLL: :g" ${BUILD_PAGE}
     ;;
-
     stage)
 
         cd $HTML_5_SRC
