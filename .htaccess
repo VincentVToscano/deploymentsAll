@@ -256,7 +256,7 @@ FileETag None
 	RewriteRule ^industry-solutions/human-resources$ human-resources\.html
 	RewriteRule ^industry-solutions/c-level-executives$ c-level-executives\.html
 	RewriteRule ^industry-solutions/information-technology$ information-technology\.html
-	RewriteRule ^(.*)blog(.*)$ http://blog.dunbar-dev.toolofnadrive.com [L]
+	RewriteRule ^(.*)blog(.*)$ http://blog.dunbar-dev.URLHERE.com [L]
 	RewriteRule ^about$ about\.html
 	RewriteRule ^about/in-the-news$ in-the-news\.html
 	RewriteRule ^contact-us$ contact-us\.html

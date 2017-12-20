@@ -125,8 +125,8 @@ case "$CI_BRANCH" in
 		sed -i "s:LLL: :g" ${BUILD_PAGE2}
 
 		# Change forwarding in .htaccess
-		sed -i "s:dunbar-dev.toolofnadrive.com:dunbar-stage.toolofnadrive.com:g" "$HTML_5_BUILD"/.htaccess
-		sed -i "s:dunbar-dev.toolofnadrive.com:dunbar-stage.toolofnadrive.com:g" "$XHTML_1_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.URLHERE.com:dunbar-stage.URLHERE.com:g" "$HTML_5_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.URLHERE.com:dunbar-stage.URLHERE.com:g" "$XHTML_1_BUILD"/.htaccess
 	;;
 	master)
 	# Build HTML_5_build
@@ -171,8 +171,8 @@ case "$CI_BRANCH" in
 		sed -i "s:LLL: :g" ${BUILD_PAGE2}
 
 		# Change forwarding in .htaccess
-		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
-		sed -i "s:dunbar-dev.toolofnadrive.com:prod.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.URLHERE.com:prod.dunbararmored.dynamic.li:g" "$HTML_5_BUILD"/.htaccess
+		sed -i "s:dunbar-dev.URLHERE.com:prod.dunbararmored.dynamic.li:g" "$XHTML_1_BUILD"/.htaccess
 	;;
 	fallthrough)
 		echo "default"
